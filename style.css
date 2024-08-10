@@ -72,8 +72,9 @@ ul
     font-size: 40px;
     color: var(--text-black-900);
     font-weight: 700;
+    position: relative;
 }
-.section-title.h2::before
+.section-title h2::before
 {
     content: '';
     height: 4px;
@@ -83,7 +84,7 @@ ul
     top: 100%;
     left: 0;
 }
-.section-title.h2::after
+.section-title h2::after
 {
     content: '';
     height: 4px;
@@ -119,7 +120,11 @@ ul
 {
     transform: scale(1.05);
 }
-/* aside */
+.shadow-dark
+{
+    box-shadow: 0 0 20px rgba(48, 46, 77,0.15)
+}
+/*------------------------------aside---------------------------*/
 .aside
 {
     width: 270px;
@@ -255,7 +260,7 @@ ul
 {
     margin-right: 15px;
 } 
-/* home */
+/*-------------------------home------------------------------------*/
 .home
 {
     min-height: 100vh;
@@ -329,14 +334,13 @@ h3.my-profession
     border-radius: 5px;
     height: 400px;
 }
-/* About */
+/*------------------About----------------------------*/
 .about .about-content
 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
-.about .about-content .about text
+.about .about-content .about-text
 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -354,22 +358,361 @@ h3.my-profession
 }
 .about .about-content .about-text p
 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 25px;
     color: var(--text-black-700);
-}
-.about .about-content .personal-info, .about .about-content .skills
-{
-    flex: 0 0 45%;
-    max-width: 45%;
 }
 .about .about-content .personal-info
 {
     flex: 0 0 60%;
-    max-width: 60%;
-    background-color: red;
+    max-width: 50%;
+    margin-top: 40px;
 }
-.about .about-content .skills
+.about .about-content .personal-info .Info-item
 {
-    background-color: blue;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
+.about .about-content .personal-info .Info-item p
+{
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 18px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--big-black-50);
+}
+.about .about-content .personal-info .Info-item p span
+{
+    font-weight: 500;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block;
+}
+.about .about-content .personal-info .buttons
+{
+    margin-top: 30px;
+}
+.about .about-content .personal-info .buttons .btn
+{
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.about .about-content .skill 
+{
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-top: 15px;
+}
+.about .about-content .skill .skill-item 
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.about .about-content .skill .skill-item h5 
+{
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+.about .about-content .skill .skill-item .progress 
+{
+    background-color: var(--big-black-50);
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+.about .about-content .skill .skill-item 
+{
+    margin-bottom: 25px;
+}
+.about .about-content .skill .skill-item .progress .progress-in 
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+}
+.about .about-content .skill .skill-item .skill-percent 
+{
+    position: absolute;
+    right: 0;
+    color: var(--text-black-900);
+    top: -40px;
+    font-weight: 400;
+    line-height: 40px;
+ } 
+ .about .about-content .education
+ {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 30px;
+ }
+.about .about-content h3.title
+{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+} 
+.about .about-content .timeline-box
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.about .about-content .timeline
+{
+    background-color: var(--big-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--big-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+.about .about-content .timeline .timeline-item
+{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+.about .about-content .timeline .timeline-item:last-child
+{
+    padding-bottom: 0;
+}
+.about .about-content .timeline .timeline-item::before
+{
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background: var(--skin-color);
+}
+.about .about-content .timeline .circle-dot
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+.about .about-content .timeline .timeline-date
+{
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+}
+.about .about-content .timeline .timeline-date .fa
+{
+    margin-right: 5px;
+}
+.about .about-content .timeline .timeline-title
+{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+.about .about-content .timeline .timeline-text
+{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-900);
+}
+/*           services     */
+.service .container
+{
+    padding-bottom: 40px;
+}
+.service .service-item
+{
+    margin-bottom: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.service .service-item .service-item-inner
+{
+    background-color: var(--big-black-100);
+    border: 1px solid var(--big-black-50);
+    border-radius: 10px;
+    padding: 20px 15px;
+    transition: all 0.35 ease;
+}
+.service .service-item .service-item-inner:hover
+{
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    background-color: red
+}
+.service .service-item .service-item-inner .icon
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner .icon .fa
+{
+    font-size: 40px;
+    line-height: 60px;
+}
+.service .service-item .service-item-inner .icon .fa-solid
+{
+    font-size: 40px;
+    line-height: 60px;
+}
+.service .service-item .service-item-inner p
+{
+    font-size: 20px;
+    color: var(--text-black-700);
+    line-height: 25px
+}
+/* portfolio */
+.portfolio .container
+{
+    padding: 40px;
+}
+.portfolio .portfolio-heading
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+.portfolio .portfolio-heading h2
+{
+    color: var(--text-black-900);
+    font-weight: 500;
+}
+.portfolio .portfolio-item
+{
+    flex: 0 0 50%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+.portfolio .portfolio-item-inner .portfolio-img img
+{
+    width: 100%;
+    display: block;
+}
+/* contact */
+.contact-title
+{
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.contact-sub-title{
+    color: var(--text-black-900);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.contact .contact-info-item p i 
+{
+    font-size: 25px;
+    color: var(--skin-color);
+}
+.contact-left p i 
+{
+    color: var(--skin-color);
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons
+{
+    margin-top: 30px;
+}
+.social-icons a
+{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color:var(--skin-color);
+    display: inline-block;
+    transform: transform 0.5s;
+}
+.social-icons a:hover
+{
+    color: red;
+    transform: translateY(-5px);
+}
+.form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border:0;
+    outline: none;
+    background: var(--big-black-900);
+    padding: 15px;
+    margin: 15px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 18px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+/* @media (max-width :1199px)
+{
+   .aside
+   {
+    left: -270px;
+   }
+   .main-content{
+    padding-left:0 ;
+   }
+   .about .about-content .personal-info .Info-item p span
+   {
+    display: block;
+    margin-left: 0;
+   }
+}
+@media (max-width:991px)
+{
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .home .home-info
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .home .home-img
+    {
+        display: none;
+    }
+}
+@media (max-width:767px)
+{
+    .contact .form,
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item,
+    .about .about-content .education,
+    .about .about-content .skill,
+    .about .about-content .personal-info
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+ 
